@@ -25,5 +25,6 @@ public class QuicksortTest {
             texte +=  val + " ";
         }
         assertEquals("1 5 7 9 10 20 ", texte);
+        System.nanoTime();
     }
 }
