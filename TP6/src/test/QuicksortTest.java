@@ -6,10 +6,10 @@ import org.junit.Assert;
 import static org.junit.Assert.assertEquals;
 
 public class QuicksortTest {
-    private int[] liste;
+    private Integer[] liste;
     @Before
     public void setUp() throws Exception {
-        liste = new int[]{10, 9, 7, 5, 1, 20};
+        liste = new Integer[]{10, 9, 7, 5, 1, 20};
     }
 
     @Test
