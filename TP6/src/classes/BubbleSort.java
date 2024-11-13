@@ -16,6 +16,7 @@ public class BubbleSort {
             for (int j = 0; j < n - k - 1; j++) {
                 DNode currentNode = list.getIndexNode(j);
                 DNode nextNode = currentNode.getNext();
+
                 if (currentNode.getElement() > nextNode.getElement()) {
                     int temp = currentNode.getElement();
                     currentNode.setElement(nextNode.getElement());
