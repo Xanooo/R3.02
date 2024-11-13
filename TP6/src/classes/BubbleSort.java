@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class BubbleSort {
 
-    private ArrayList<Integer> list;
+    private DLinkedList list;
 
     public BubbleSort() {
-        list = new ArrayList<>();
+        list = new DLinkedList();
     }
 
-    public String bubbleSort(ArrayList<Integer> list) {
-        int n = list.size();
+    public String bubbleSort(DLinkedList list) {
+        int n = list.getSize();
         for (int k = 0; k < n - 1; k++) {
             for (int j = 0; j < n - k - 1; j++) {
-                if (list.get(j) > list.get(j + 1)) {
-                    int temp = list.get(j);
-                    list.set(j, list.get(j + 1));
-                    list.set(j + 1, temp);
+                if (list.getIndexElement(j) > list.getIndexElement(j + 1)) {
+                    DNode temp = list.getIndexNode(j);
+                    list.setList(j, list.getIndexNode(j + 1));
+                    list.setList(j + 1, temp);
                 }
             }
         }
-        return list.toString();
+        return list.afficherListe();
     }
 
 }

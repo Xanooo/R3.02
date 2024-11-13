@@ -1,7 +1,7 @@
 package classes;
 
 public class DNode {
-    private String element;
+    private int element;
     private DNode next, prev;
 
     /**
@@ -10,7 +10,7 @@ public class DNode {
      * @param next
      * @param prev
      */
-    public DNode(String element, DNode next, DNode prev) {
+    public DNode(int element, DNode next, DNode prev) {
         this.element = element;
         this.next = next;
         this.prev = prev;
@@ -21,11 +21,11 @@ public class DNode {
      *
      * @return
      */
-    public String getElement() {
+    public int getElement() {
         return element;
     }
 
-    public void setElement(String element) {
+    public void setElement(int element) {
         this.element = element;
     }
 

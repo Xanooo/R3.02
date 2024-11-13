@@ -6,19 +6,16 @@ import java.util.ArrayList;
 public class Main {
 
 
-
-
     public static void main(String[] args) {
-        DLinkedList list = new DLinkedList();
-        ArrayList<Integer> listeBubble = new ArrayList<>();
-        list.addLastDouble("Je");
-        list.addLastDouble("suis");
-        list.addLastDouble("Cyril");
-        list.addLastDouble("BUT");
-        list.addLastDouble("INFO");
-
-
-
+       BubbleSort bubbleSort = new BubbleSort();
+       DLinkedList linkedList = new DLinkedList();
+       linkedList.addLastDouble(4);
+       linkedList.addLastDouble(1);
+       linkedList.addLastDouble(3);
+       linkedList.addLastDouble(2);
+       bubbleSort.bubbleSort(linkedList);
+       String liste = linkedList.afficherListe();
+       System.out.println(liste);
     }
 
 }

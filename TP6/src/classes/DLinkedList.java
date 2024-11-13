@@ -2,11 +2,11 @@ package classes;
 
 public class DLinkedList {
     private DNode head, tail;
-    private long size;
+    private int size;
 
     public DLinkedList() {
-        head = new DNode("", null, null);
-        tail = new DNode("", null, null);
+        head = new DNode(0, null, null);
+        tail = new DNode(0, null, null);
         size = 0;
     }
 
@@ -14,7 +14,31 @@ public class DLinkedList {
         return size == 0;
     }
 
-    public void addFirstDouble(String value){
+    public DNode getHead() {
+        return head;
+    }
+
+    public void setHead(DNode head) {
+        this.head = head;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public DNode getTail() {
+        return tail;
+    }
+
+    public void setTail(DNode tail) {
+        this.tail = tail;
+    }
+
+    public void addFirstDouble(int value){
         DNode newNode = new DNode(value, null, null);
         if (isEmpty()){
             head = tail = newNode;
@@ -28,7 +52,37 @@ public class DLinkedList {
         size++;
     }
 
-    public void addLastDouble(String value){
+
+
+    public int getIndexElement(int index){
+        DNode temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.getNext();
+        }
+        return temp.getElement();
+
+    }
+
+    public DNode getIndexNode(int index){
+        DNode temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.getNext();
+
+        }
+        return temp;
+    }
+
+    public void setList(int index, DNode node){
+        DNode temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.getNext();
+        }
+        temp.setNext(node);
+        node.setPrev(temp);
+    }
+
+
+    public void addLastDouble(int value){
         DNode newNode = new DNode(value, null, null);
         if (isEmpty()) {
             head = tail = newNode;
@@ -40,13 +94,14 @@ public class DLinkedList {
         size++;
     }
 
-    public void afficherListe(){
+    public String afficherListe(){
         DNode temp = head;
+        String liste="";
         while (temp != null){
-            System.out.println(temp.getElement() + " - ");
+            liste+=temp.getElement() + " - ";
             temp = temp.getNext();
         }
-        System.out.println("null");
+        return liste;
     }
 
 }
