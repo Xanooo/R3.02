@@ -94,14 +94,20 @@ public class DLinkedList {
         size++;
     }
 
-    public String afficherListe(){
+    public String afficherListe() {
         DNode temp = head;
-        String liste="";
-        while (temp != null){
-            liste+=temp.getElement() + " - ";
+        StringBuilder liste = new StringBuilder("[");
+        while (temp != null) {
+            liste.append(temp.getElement());
+            if (temp.getNext() != null) {
+                liste.append(" - ");
+            }
             temp = temp.getNext();
         }
-        return liste;
+        liste.append("]");
+        return liste.toString();
     }
+
+
 
 }

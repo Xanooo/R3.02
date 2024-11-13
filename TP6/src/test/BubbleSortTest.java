@@ -21,6 +21,6 @@ public class BubbleSortTest {
 
     @Test
     public void testBubbleSort() {
-        //assertEquals(b.bubbleSort(list1));
+        assertEquals("[1 - 2 - 3 - 5]", b.bubbleSort(list1));
     }
 }

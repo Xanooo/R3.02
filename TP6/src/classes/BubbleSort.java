@@ -14,10 +14,12 @@ public class BubbleSort {
         int n = list.getSize();
         for (int k = 0; k < n - 1; k++) {
             for (int j = 0; j < n - k - 1; j++) {
-                if (list.getIndexElement(j) > list.getIndexElement(j + 1)) {
-                    DNode temp = list.getIndexNode(j);
-                    list.setList(j, list.getIndexNode(j + 1));
-                    list.setList(j + 1, temp);
+                DNode currentNode = list.getIndexNode(j);
+                DNode nextNode = currentNode.getNext();
+                if (currentNode.getElement() > nextNode.getElement()) {
+                    int temp = currentNode.getElement();
+                    currentNode.setElement(nextNode.getElement());
+                    nextNode.setElement(temp);
                 }
             }
         }
