@@ -1,32 +1,67 @@
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Competition {
-    private Set<Amateur> set;
+    private Set<Amateur> setAmateur;
+    private Set<Competiteur> setCompetiteur;
+
     public Competition() {
-        set = new HashSet<>();
+        this.setAmateur = new HashSet<>();
+        this.setCompetiteur = new TreeSet<>();
     }
 
-    public Set<Amateur> getSet() {
-        return set;
+    public Set<Amateur> getSetAmateur() {
+        return setAmateur;
     }
 
-    public void setSet(Set<Amateur> set) {
-        this.set = set;
+    public Set<Competiteur> getSetCompetiteur() {
+        return setCompetiteur;
+    }
+
+    public int sizeAmateur() {
+        return setAmateur.size();
+    }
+
+    public int sizeCompetiteur() {
+        return setCompetiteur.size();
+    }
+
+    public void setSetAmateur(Set<Amateur> set) {
+        this.setAmateur = set;
+    }
+
+    public void setSetCompetiteur(Set<Competiteur> set) {
+        this.setCompetiteur = set;
     }
 
     public void addAmateur(Amateur amateur){
-        set.add(amateur);
+        setAmateur.add(amateur);
+        System.out.println(amateur.getNom() + " a été ajouté !");
     }
 
-    public boolean isInCompetition(Amateur amateur){
-        return set.contains(amateur);
+    public void addCompetiteur(Competiteur competiteur){
+        setCompetiteur.add(competiteur);
+        System.out.println(competiteur.getNom() + " a été ajouté !");
     }
 
-    public String listeCompetition(){
-        return set.toString();
+    public boolean isInCompetitionAmateur(Amateur amateur){
+        return setAmateur.contains(amateur);
     }
 
+    public boolean isInCompetitionCompetiteur(Competiteur competiteur){
+        return setCompetiteur.contains(competiteur);
+    }
 
+    public void afficherAmateur(){
+        System.out.print("Liste des participants : ");
+        for (Amateur amateur : setAmateur){
+            System.out.print(amateur.getNom() + " ");
+        }
+    }
+
+    public void afficherCompetiteur(){
+        System.out.print("Liste des competiteurs : ");
+        for (Competiteur competiteur : setCompetiteur){
+            System.out.print(competiteur.getNom() + " ");
+        }
+    }
 }

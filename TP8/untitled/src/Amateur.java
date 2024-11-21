@@ -1,5 +1,13 @@
 public class Amateur extends Participant{
-    public Amateur(String nom, String prenom, String adresse, int age){
-        super(nom, prenom, adresse, age);
+    public Amateur(String nom, int score){
+        super(nom, score);
+    }
+
+    @Override
+    public String toString() {
+        return "Amateur{" +
+                "nom='" + nom + '\'' +
+                ", score=" + score +
+                '}';
     }
 }

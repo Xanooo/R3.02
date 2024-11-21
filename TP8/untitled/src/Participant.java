@@ -2,15 +2,11 @@ import java.util.Map;
 
 public class Participant {
     String nom;
-    String prenom;
-    String adresse;
-    int age;
+    int score;
 
-    public Participant(String nom, String adresse, String prenom, int age) {
+    public Participant(String nom, int score) {
         this.nom = nom;
-        this.adresse = adresse;
-        this.prenom = prenom;
-        this.age = age;
+        this.score = score;
     }
 
     public String getNom() {
@@ -21,27 +17,19 @@ public class Participant {
         this.nom = nom;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public int getScore() {
+        return score;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setScore(int score) {
+        this.score = score;
     }
 
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    @Override
+    public String toString() {
+        return "Participant{" +
+                "nom='" + nom + '\'' +
+                ", score=" + score +
+                '}';
     }
 }
